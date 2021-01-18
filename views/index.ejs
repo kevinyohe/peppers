@@ -19,53 +19,9 @@
         <![endif]-->
         <h1>Pepper Grow Report</h1>
         <section>
-            <div>
-                Types Grown:
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Name:</th>
-                        <th>Obtained From:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Habernero</td>
-                        <td>eBay</td>
-                    </tr>
-                    <tr>
-                        <td>Pimento</td>
-                        <td>eBay</td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <%= foo %>
             <main>
-                <!-- <div class="jumbotron">
+             <div class="jumbotron">
                     <h1>Peppers Grown</h1>
-                    
-                    <ul>
-                        <% pepper_list.forEach(function(pepper) { %>
-                            <li>
-                                <strong><%= pepper.name %></strong>
-                                Store <%= pepper.from %>
-                                Seller <italic><%= pepper.soldby ? pepper.soldby.split('/')[(pepper.soldby.split('/').length-1)] : '' %></italic>
-                                <% if (pepper.soldby) { %>
-
-                                    <a href=<%= pepper.soldby %>><%= pepper.soldby %></a>
-                                   
-                                   <% }; %>
-
-                                <% if (pepper.image) { %>
-                                <img src=<%= pepper.image %> width="128" height="128" />
-                                
-                                
-                               <% }; %>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div> -->
                 <div class="d-flex p-2 bd-highlight">
                 <% pepper_list.forEach(function(pepper) { %>
                 <div class="card" style="width: 18rem;">

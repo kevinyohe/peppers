@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pepper Grow Report</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Pepper Grow Report</h1>
+        <section>
+            <div>
+                Types Grown:
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Obtained From:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Habernero</td>
+                        <td>eBay</td>
+                    </tr>
+                    <tr>
+                        <td>Pimento</td>
+                        <td>eBay</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <%= foo %>
+            <main>
+                <!-- <div class="jumbotron">
+                    <h1>Peppers Grown</h1>
+                    
+                    <ul>
+                        <% pepper_list.forEach(function(pepper) { %>
+                            <li>
+                                <strong><%= pepper.name %></strong>
+                                Store <%= pepper.from %>
+                                Seller <italic><%= pepper.soldby ? pepper.soldby.split('/')[(pepper.soldby.split('/').length-1)] : '' %></italic>
+                                <% if (pepper.soldby) { %>
+
+                                    <a href=<%= pepper.soldby %>><%= pepper.soldby %></a>
+                                   
+                                   <% }; %>
+
+                                <% if (pepper.image) { %>
+                                <img src=<%= pepper.image %> width="128" height="128" />
+                                
+                                
+                               <% }; %>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div> -->
+                <div class="d-flex p-2 bd-highlight">
+                <% pepper_list.forEach(function(pepper) { %>
+                <div class="card" style="width: 18rem;">
+                    <% if (pepper.image) { %>
+                    <img src="<%= pepper.image %>" class="card-img-top" alt="..." width=256 height=256>
+                    <% }; %>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= pepper.name %></h5>
+                      <p class="card-text"><%= pepper.soldby ? pepper.soldby.split('/')[(pepper.soldby.split('/').length-1)] : '' %></p>
+                      <% if (pepper.soldby) { %>
+
+                        <a href=<%= pepper.soldby %> class="btn btn-primary">Go</a>
+                       
+                       <% }; %>
+                    </div>
+                  </div>
+                  <% }); %>
+                </div>
+            </main>
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>

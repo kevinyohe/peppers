@@ -15,4 +15,8 @@ app.get('/', (req, res) => {
   res.render('index', {foo: 'FOO', pepper_list: pepper_list});
 });
 
-app.listen(4000, () => console.log('Example app listening on port 4000!'));
+//app.listen(4000, () => console.log('Example app listening on port 4000!'));
+
+const listener = app.listen(process.env.PORT || 4000, () => {
+    console.log("Your app is listening on port " + listener.address().port);
+  });

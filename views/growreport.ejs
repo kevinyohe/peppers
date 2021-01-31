@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Pepper Grow Report</h1>
+        <section>
+            <main>
+             <div class="jumbotron">
+                    <h1>Peppers Grown</h1>
+                <div class="d-flex p-2 bd-highlight d-flex justify-content-around">
+                <% pepper_list.forEach(function(pepper) { %>
+                <div class="card" style="width: 18rem;">
+                    <% if (pepper.image) { %>
+                    <img src="<%= pepper.image %>" class="card-img-top" alt="..." width=256 height=256>
+                    <% }; %>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= pepper.name %></h5>
+                      <p class="card-text"><%= pepper.soldby ? pepper.soldby.split('/')[(pepper.soldby.split('/').length-1)] : '' %></p>
+                      <% if (pepper.soldby) { %>
+
+                        <a href=<%= pepper.soldby %> class="btn btn-primary">Go</a>
+                       
+                       <% }; %>
+                    </div>
+                  </div>
+                  <% }); %>
+                </div>
+            </main>
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -11,8 +11,18 @@ var pepper_list = [
 app.use( express.static( "public" ) ); 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  res.render('index', {foo: 'FOO', pepper_list: pepper_list});
+
+app.get('/', function(req, res){
+    
+  res.render('index');
+});
+app.get('/info', function(req, res){
+  
+  res.render('info');
+});
+
+app.get('/growreport', (req, res) => {
+  res.render('growreport', {foo: 'FOO', pepper_list: pepper_list});
 });
 
 app.get('/:id/', (req, res) => {
